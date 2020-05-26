@@ -1,0 +1,22 @@
+
+Data preparation:
+
+The original rainfall data for each pass of the satellite is dowloaded from http://trmm.gsfc.nasa.gov/. These data are available in .HDF format. We converted the data to .csv format. We merge the data arising from all passes of a month and save them as monthly data for the considered period (2001-2012). 
+
+1) The folder "rainfall_data" contains four files. Each file contains rainfall data corresponding to a monsoon month (June, July, August and September) of the year 2012. Each file contain rainfall information of spatial locations on 8 variables (columns) such as long(longitude), lat(latitude), rainfall rate(rrsurf), year, day, hour, minute, second. 
+
+2) The folder "boundary_contour" contains the data about the bondary contours of the rainfall regions for the month June of 2012 (for example). 
+The following is the description of the variables:
+
+M6_cluster_points: Represents the co-ordinates bondary points of the rainfall regions
+M6_cluster_lengths: Number of bondary points
+M6_cen_spell: Index of regions which are censored (not completely observed).
+M6_rainfall_rate: Rainfall rate for each of the grids with positive rainfall.
+
+Processed data: 
+
+3) The folder "contours" contains twelve files(named according to corresponding year) each containing the star-hulls of rainfall regions for each of the years 2001-2012. A year with n rainfall regions consists of a 1000xn matrix with each column representing the boundary contour of a rainfall region (i.e., 1000 equispaced point from the boundary). 
+
+4) The folder "complete_indices" contains twelve files(named according to corresponding year). Each file contains a single column containing indices of the complete rainfall regions for a particular year. 
+ 
+5) The folder "censored_indices" contains twelve files(named according to corresponding year). Each file contains a single column containing the indices of the censored rainfall regions for a year. 
